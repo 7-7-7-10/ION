@@ -700,44 +700,10 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("Are they equal?", storedPassword === correctPassword);
 
   // If localStorage doesn't have the correct password, alert with details
-  if (storedPassword !== correctPassword) {
-    alert(
-      "Local storage does not have today's correct password.\n" +
-      "What is currently stored under 'dailyPassword':\n\n" +
-      (storedPassword === null ? "(nothing stored)" : "'" + storedPassword + "'") +
-      "\n\nToday's correct password should be:\n'" + correctPassword + "'\n\n" +
-      "Please generate and store today's password first."
-    );
-    return;
-  } else {
-    // If localStorage is correct, show success alert
-    alert("Correct LocalStorage Data Found!");
-  }
+  
 
   // Prompt user for password input
-  var attempts = 0;
-  while (true) {
-    var userInput = prompt("Enter today's ION password:");
-    if (userInput === null) {
-      document.body.innerHTML = "<h2 style='color:#3fa7ff;text-align:center;margin-top:3em;font-family:sans-serif;'>Access Cancelled</h2>";
-      break;
-    }
-    if (userInput === correctPassword) {
-      alert("Access granted!");
-      // You could redirect or show content here
-      break;
-    } else {
-      attempts++;
-      if (attempts >= 3) {
-        alert("Too many incorrect attempts. Reloading page.");
-        window.location.reload();
-        break;
-      } else {
-        alert("Incorrect password. Try again.");
-      }
-    }
-  }
-});
+
     function showAppIframeFallback(url, msg) {
       document.getElementById('app-iframe').style.display = 'none';
       document.getElementById('app-iframe-fallback').style.display = '';
