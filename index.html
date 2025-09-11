@@ -535,19 +535,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("Are they equal?", storedPassword === correctPassword);
 
   // If localStorage doesn't have the correct password, alert with details
-  if (storedPassword !== correctPassword) {
-    alert(
-      "Local storage does not have today's correct password.\n" +
-      "What is currently stored under 'dailyPassword':\n\n" +
-      (storedPassword === null ? "(nothing stored)" : "'" + storedPassword + "'") +
-      "\n\nToday's correct password should be:\n'" + correctPassword + "'\n\n" +
-      "Please generate and store today's password first."
-    );
-    return;
-  } else {
-    // If localStorage is correct, show success alert
-    alert("Correct LocalStorage Data Found!");
-  }
 
   // Prompt user for password input
   var attempts = 0;
