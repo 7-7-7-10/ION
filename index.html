@@ -527,39 +527,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var correctPassword = getDailyPassword();
   var storedPassword = localStorage.getItem('dailyPassword');
 
-  // Debug output to console
-  console.log("=== ION Password Debug ===");
-  console.log("Today's date:", new Date());
-  console.log("Correct password (generated):", correctPassword);
-  console.log("Stored password (localStorage):", storedPassword);
-  console.log("Are they equal?", storedPassword === correctPassword);
+
 
   // If localStorage doesn't have the correct password, alert with details
 
   // Prompt user for password input
-  var attempts = 0;
-  while (true) {
-    var userInput = prompt("Enter today's ION password:");
-    if (userInput === null) {
-      document.body.innerHTML = "<h2 style='color:#3fa7ff;text-align:center;margin-top:3em;font-family:sans-serif;'>Access Cancelled</h2>";
-      break;
-    }
-    if (userInput === correctPassword) {
-      alert("Access granted!");
-      // You could redirect or show content here
-      break;
-    } else {
-      attempts++;
-      if (attempts >= 3) {
-        alert("Too many incorrect attempts. Reloading page.");
-        window.location.reload();
-        break;
-      } else {
-        alert("Incorrect password. Try again.");
-      }
-    }
-  }
-});
+  
+
+
     const gearBtn = document.getElementById('quick-settings-gear-btn');
     const modal = document.getElementById('quick-settings-modal');
     const closeBtn = document.getElementById('quick-settings-modal-close');
